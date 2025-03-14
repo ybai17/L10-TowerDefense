@@ -137,6 +137,10 @@ MonoBehaviour:
   rotationSpeed: 30
   maxRotationAngle: 90
   detectionRange: 5
+  projectilePrefab: {fileID: 4132166219533410251, guid: e1ca50c5fe30d42c68e1b3170735b7bc, type: 3}
+  firePoint: {fileID: 4457715277627928}
+  fireRate: 2
+  fireCooldown: 0
 --- !u!1 &1430798241748466
 GameObject:
   m_ObjectHideFlags: 0

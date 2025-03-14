@@ -15,6 +15,13 @@ public class TowerAI : MonoBehaviour
     public float maxRotationAngle = 90f;
     public float detectionRange = 10f;
 
+    [Header("Attack Settings")]
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+    //rate is firing per second
+    public float fireRate = 2f;
+    float fireCooldown = 0;
+
     Transform target;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,6 +65,26 @@ public class TowerAI : MonoBehaviour
     void Attack()
     {
         Debug.Log("ATTACKING >:(");
+
+        if (target == null || Vector3.Distance(transform.position, target.position) > detectionRange)
+        {
+            target = null;
+            currentState = TowerState.Patrol;
+            return;
+        }
+        
+        //face the enemy
+        turret.LookAt(target);
+
+        //check cooldown - can we shoot?
+        if (fireCooldown <= 0)
+        {
+            Shoot();
+            fireCooldown = 1 / fireRate;
+            Debug.Log("fireCooldown " + fireCooldown);
+        }
+
+        fireCooldown -= Time.deltaTime;
     }
 
     void Die()
@@ -98,5 +125,11 @@ public class TowerAI : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
+    }
+
+    void Shoot()
+    {
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        
     }
 }
