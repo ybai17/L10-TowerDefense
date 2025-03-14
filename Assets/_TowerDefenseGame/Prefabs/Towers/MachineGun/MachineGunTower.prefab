@@ -132,6 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb6062f4ce98cf4893caca5cbe26d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
+  turret: {fileID: 4877050138446582}
+  rotationSpeed: 30
+  maxRotationAngle: 90
+  detectionRange: 5
 --- !u!1 &1430798241748466
 GameObject:
   m_ObjectHideFlags: 0
