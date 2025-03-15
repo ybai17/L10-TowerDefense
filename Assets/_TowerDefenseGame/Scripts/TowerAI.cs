@@ -22,12 +22,25 @@ public class TowerAI : MonoBehaviour
     public float fireRate = 2f;
     float fireCooldown = 0;
 
+    [Header("Die Settings")]
+    public int health = 100;
+    public GameObject destroyFXPrefab;
+
+    [Header("General Settings")]
+    public GameObject buildFXPrefab;
+
     Transform target;
+    bool isDying;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        isDying = false;
+
+        if (buildFXPrefab)
+            Instantiate(buildFXPrefab, transform.position, transform.rotation);
+
+        //TakeDamage(100);
     }
 
     // Update is called once per frame
@@ -74,13 +87,16 @@ public class TowerAI : MonoBehaviour
         }
         
         //face the enemy
-        turret.LookAt(target);
+        //turret.LookAt(target);
+        Vector3 directionToTarget = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
+        turret.rotation = Quaternion.Slerp(turret.rotation, lookRotation, rotationSpeed * Time.deltaTime);
 
         //check cooldown - can we shoot?
         if (fireCooldown <= 0)
         {
             Shoot();
-            fireCooldown = 1 / fireRate;
+            fireCooldown = 1f / fireRate;
             Debug.Log("fireCooldown " + fireCooldown);
         }
 
@@ -89,7 +105,17 @@ public class TowerAI : MonoBehaviour
 
     void Die()
     {
+        if (isDying)
+            return;
+        
         Debug.Log("dead... X_X");
+
+        if (destroyFXPrefab)
+            Instantiate(destroyFXPrefab, transform.position, transform.rotation);
+
+        Destroy(gameObject, 1);
+
+        isDying = true;
     }
 
     void LookForEnemies()
@@ -129,7 +155,20 @@ public class TowerAI : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        
+        var bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        BulletBehavior bulletBehavior = bullet.GetComponent<BulletBehavior>();
+
+        if (bulletBehavior)
+            bulletBehavior.SetTarget(target);
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+
+        if (health <= 0)
+        {
+            currentState = TowerState.Die;
+        }
     }
 }
