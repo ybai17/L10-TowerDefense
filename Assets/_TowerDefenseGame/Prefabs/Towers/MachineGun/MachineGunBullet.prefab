@@ -9583,6 +9583,7 @@ GameObject:
   - component: {fileID: 7283269815690230602}
   - component: {fileID: 1377422268263345175}
   - component: {fileID: 3077859773959998706}
+  - component: {fileID: 715277190782381702}
   m_Layer: 10
   m_Name: MachineGunBullet
   m_TagString: Untagged
@@ -14540,6 +14541,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &715277190782381702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132166219533410251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c73684ea88ed8549ad81d2baa029f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 1
+  rotationSpeed: 5
+  lifetime: 5
+  damage: 10
+  bulletHitVFXPrefab: {fileID: 534260366808470948, guid: e7865b22134124ac58e486a5f125e7c3, type: 3}
 --- !u!1 &4739401406311911194
 GameObject:
   m_ObjectHideFlags: 0
