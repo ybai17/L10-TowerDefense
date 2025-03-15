@@ -140,7 +140,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4132166219533410251, guid: e1ca50c5fe30d42c68e1b3170735b7bc, type: 3}
   firePoint: {fileID: 4457715277627928}
   fireRate: 2
-  fireCooldown: 0
+  health: 100
+  destroyFXPrefab: {fileID: 1082826025734650, guid: 7a0476686964e41ac8320b7cf37868c2, type: 3}
+  buildFXPrefab: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68, type: 3}
 --- !u!1 &1430798241748466
 GameObject:
   m_ObjectHideFlags: 0
