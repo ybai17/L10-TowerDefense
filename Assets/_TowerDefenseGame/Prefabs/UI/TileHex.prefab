@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 9126688781527249989}
   - component: {fileID: 714874840185527500}
   - component: {fileID: 1591409366851602360}
+  - component: {fileID: 2034929497993502557}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -141,3 +142,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2034929497993502557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254668264219400494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555d79e66de57554a96d7529bee97cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: f3b509a92e9a44eeabdb0559c0710b2b, type: 2}
+  towerPrefab: {fileID: 1401014823036408, guid: 639c49a7820a549c5822f7b768abc5ac, type: 3}
