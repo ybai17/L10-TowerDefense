@@ -22,6 +22,7 @@ public class EnemyAI : MonoBehaviour
     public float detectionRange = 10f;
 
     [Header("Attack Settings")]
+    public bool canAttack = true;
     public GameObject projectilePrefab;
     public Transform firePoint;
     //rate is firing per second
@@ -48,7 +49,8 @@ public class EnemyAI : MonoBehaviour
 
         isDying = false;
 
-        originalTurretRotation = turret.localRotation;
+        if (turret)
+            originalTurretRotation = turret.localRotation;
     }
 
     // Update is called once per frame
@@ -59,7 +61,10 @@ public class EnemyAI : MonoBehaviour
                 Navigate();
                 break;
             case EnemyState.Attack:
-                Attack();
+                if (canAttack)
+                    Attack();
+                else
+                    currentState = EnemyState.Navigate;
                 break;
             case EnemyState.Die:
                 Die();
@@ -69,11 +74,13 @@ public class EnemyAI : MonoBehaviour
 
     void Navigate()
     {
-        agent.SetDestination(targetBase.position);
+        //agent.SetDestination(targetBase.position);
 
-        FindNearestTower();
+        if (canAttack)
+            FindNearestTower();
 
-        turret.localRotation = Quaternion.Slerp(turret.localRotation, originalTurretRotation, rotationSpeed * Time.deltaTime);
+        if (turret)
+            turret.localRotation = Quaternion.Slerp(turret.localRotation, originalTurretRotation, rotationSpeed * Time.deltaTime);
     }
 
     void Attack()
@@ -148,10 +155,22 @@ public class EnemyAI : MonoBehaviour
 
     void Shoot()
     {
+        if (!canAttack)
+            return;
+        
         var bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
         BulletBehavior bulletBehavior = bullet.GetComponent<BulletBehavior>();
-        bulletBehavior.SetTarget(attackTarget);
+
+        if (bulletBehavior)
+        {
+            var targetTowerTurret = attackTarget.Find("Turret");
+            if (targetTowerTurret)
+                bulletBehavior.SetTarget(targetTowerTurret);
+            else
+                bulletBehavior.SetTarget(attackTarget);
+        }
+            
     }
 
     void TakeDamage(int damage)

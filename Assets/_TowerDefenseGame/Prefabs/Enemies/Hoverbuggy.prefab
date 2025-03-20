@@ -270,7 +270,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 3
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -299,12 +299,13 @@ MonoBehaviour:
   currentState: 0
   turret: {fileID: 0}
   rotationSpeed: 30
-  detectionRange: 10
+  detectionRange: 0
+  canAttack: 0
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
   fireRate: 2
   health: 100
-  destroyFXPrefab: {fileID: 0}
+  destroyFXPrefab: {fileID: 1082826025734650, guid: 10eef6400678c4c75b2ac94e435a2bd5, type: 3}
 --- !u!1 &6758349472320825865
 GameObject:
   m_ObjectHideFlags: 0

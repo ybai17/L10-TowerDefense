@@ -2529,10 +2529,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hoverbuggy
       objectReference: {fileID: 0}
-    - target: {fileID: 5579247913167121490, guid: f9557bad97cbf441398c3b90b4dc95cb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6988674565513599024, guid: f9557bad97cbf441398c3b90b4dc95cb, type: 3}
       propertyPath: targetBase
       value: 
