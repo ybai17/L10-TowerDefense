@@ -142,7 +142,7 @@ public class TowerAI : MonoBehaviour
         if (nearestEnemy)
         {
             target = nearestEnemy;
-            Debug.Log("Target detected: " + target.name);
+            //Debug.Log("Target detected: " + target.name);
             currentState = TowerState.Attack;
         }
     }

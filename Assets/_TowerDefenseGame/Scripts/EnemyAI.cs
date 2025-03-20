@@ -140,7 +140,7 @@ public class EnemyAI : MonoBehaviour
         if (nearestTower)
         {
             attackTarget = nearestTower;
-            Debug.Log("Buggy targeting: " + attackTarget.name);
+            Debug.Log("Enemy is targeting: " + attackTarget.name);
             currentState = EnemyState.Attack;
             return;
         }
@@ -148,7 +148,7 @@ public class EnemyAI : MonoBehaviour
 
     void Shoot()
     {
-        var bullet = Instantiate(projectilePrefab, firePoint.position, transform.rotation);
+        var bullet = Instantiate(projectilePrefab, firePoint.position, turret.rotation);
 
         BulletBehavior bulletBehavior = bullet.GetComponent<BulletBehavior>();
         bulletBehavior.SetTarget(attackTarget);
@@ -174,7 +174,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.transform.CompareTag("Bullet"))
         {
-            TakeDamage(50);
+            TakeDamage(40);
             Debug.Log("ENEMY took damage");
         }   
     }

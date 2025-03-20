@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 4795219791600268}
   - component: {fileID: 8677017608449191940}
   - component: {fileID: 4322260784652517551}
+  - component: {fileID: 9108205952735068506}
   m_Layer: 10
   m_Name: MachineGunTower
   m_TagString: Tower
@@ -163,8 +164,35 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0189548, y: 1.4077798, z: 1.6073631}
-  m_Center: {x: -0.009477479, y: 0.7145399, z: 0.09265687}
+  m_Size: {x: 1.971665, y: 1.4077798, z: 2.0201206}
+  m_Center: {x: 0.04209442, y: 0.7145399, z: 0.21960008}
+--- !u!54 &9108205952735068506
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401014823036408}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &1430798241748466
 GameObject:
   m_ObjectHideFlags: 0
