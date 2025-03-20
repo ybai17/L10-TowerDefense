@@ -119,11 +119,14 @@ public class EnemyAI : MonoBehaviour
 
         foreach (Collider curr in colliders)
         {
-            float currDistance = Vector3.Distance(curr.gameObject.transform.position, transform.position);
-            if (currDistance < shortestDistance)
+            if (curr.CompareTag("Tower"))
             {
-                nearestTower = curr.gameObject.transform;
-                shortestDistance = currDistance;
+                float currDistance = Vector3.Distance(curr.gameObject.transform.position, transform.position);
+                if (currDistance < shortestDistance)
+                {
+                    nearestTower = curr.gameObject.transform;
+                    shortestDistance = currDistance;
+                }
             }
         }
 
@@ -151,5 +154,11 @@ public class EnemyAI : MonoBehaviour
         {
             currentState = EnemyState.Die;
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 }

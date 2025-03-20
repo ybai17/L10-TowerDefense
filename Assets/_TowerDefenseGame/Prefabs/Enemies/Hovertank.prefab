@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 3972117647116217176}
   - component: {fileID: 3959858248184875902}
   - component: {fileID: 8826200534267012195}
+  - component: {fileID: -7933308056766172294}
   m_Layer: 11
   m_Name: Hovertank
   m_TagString: Enemy
@@ -422,10 +423,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6889207713388379910}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.861212, y: -87.315, z: -13.52818}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.64000005, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8505370626030064319}
   - {fileID: 6973182017725350163}
@@ -577,6 +578,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5191112, y: 0.7688527, z: 2.1745498}
   m_Center: {x: -0.012941241, y: 0.61869645, z: 0.019012332}
+--- !u!114 &-7933308056766172294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889207713388379910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d72132f41af604998006e24a9fd45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetBase: {fileID: 0}
+  currentState: 0
+  turret: {fileID: 8505370626030064319}
+  rotationSpeed: 30
+  detectionRange: 10
+  projectilePrefab: {fileID: 3808870246630231086, guid: fb0ae46419205564694480b3b2b85d1c, type: 3}
+  firePoint: {fileID: 3210972321951199739}
+  fireRate: 2
+  health: 100
+  destroyFXPrefab: {fileID: 1082826025734650, guid: 10eef6400678c4c75b2ac94e435a2bd5, type: 3}
+  buildFXPrefab: {fileID: 0}
 --- !u!1 &8446068542836858012
 GameObject:
   m_ObjectHideFlags: 0
