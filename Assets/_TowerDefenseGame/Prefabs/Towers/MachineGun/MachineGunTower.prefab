@@ -96,13 +96,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4795219791600268}
   - component: {fileID: 8677017608449191940}
+  - component: {fileID: 4322260784652517551}
   m_Layer: 10
   m_Name: MachineGunTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4795219791600268
 Transform:
   m_ObjectHideFlags: 0
@@ -143,6 +144,27 @@ MonoBehaviour:
   health: 100
   destroyFXPrefab: {fileID: 1082826025734650, guid: 7a0476686964e41ac8320b7cf37868c2, type: 3}
   buildFXPrefab: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68, type: 3}
+--- !u!65 &4322260784652517551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401014823036408}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0189548, y: 1.4077798, z: 1.6073631}
+  m_Center: {x: -0.009477479, y: 0.7145399, z: 0.09265687}
 --- !u!1 &1430798241748466
 GameObject:
   m_ObjectHideFlags: 0
