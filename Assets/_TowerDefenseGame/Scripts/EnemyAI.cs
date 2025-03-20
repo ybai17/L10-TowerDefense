@@ -84,7 +84,7 @@ public class EnemyAI : MonoBehaviour
         //look at tower
         Vector3 direction = attackTarget.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+        turret.rotation = Quaternion.Slerp(turret.rotation, lookRotation, rotationSpeed * Time.deltaTime);
 
         //can we shoot?
         if (fireCooldown <= 0)
