@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     [Header("General Settings")]
+    public GameObject buildFXPrefab;
     public Transform targetBase;
     public EnemyState currentState = EnemyState.Navigate;
 
@@ -32,9 +33,9 @@ public class EnemyAI : MonoBehaviour
     public int health = 100;
     public GameObject destroyFXPrefab;
 
-    [Header("General Settings")]
-    public GameObject buildFXPrefab;
     bool isDying;
+
+    Quaternion originalTurretRotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +47,8 @@ public class EnemyAI : MonoBehaviour
         //agent.destination = targetBase.position;
 
         isDying = false;
+
+        originalTurretRotation = turret.localRotation;
     }
 
     // Update is called once per frame
@@ -69,6 +72,8 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(targetBase.position);
 
         FindNearestTower();
+
+        turret.localRotation = Quaternion.Slerp(turret.localRotation, originalTurretRotation, rotationSpeed * Time.deltaTime);
     }
 
     void Attack()
@@ -102,6 +107,8 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
+        Debug.Log("Enemy down");
+        agent.isStopped = true;
         if (destroyFXPrefab)
         {
             Instantiate(destroyFXPrefab, transform.position, transform.rotation);
@@ -135,6 +142,7 @@ public class EnemyAI : MonoBehaviour
             attackTarget = nearestTower;
             Debug.Log("Buggy targeting: " + attackTarget.name);
             currentState = EnemyState.Attack;
+            return;
         }
     }
 
@@ -160,5 +168,14 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Bullet"))
+        {
+            TakeDamage(50);
+            Debug.Log("ENEMY took damage");
+        }   
     }
 }

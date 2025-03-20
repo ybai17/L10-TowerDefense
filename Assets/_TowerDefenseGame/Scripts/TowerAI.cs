@@ -62,7 +62,7 @@ public class TowerAI : MonoBehaviour
 
     void Patrol()
     {
-        Debug.Log("Patrolling <_< ... >_>");
+        //Debug.Log("Patrolling <_< ... >_>");
 
         //turret.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
@@ -77,7 +77,7 @@ public class TowerAI : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("ATTACKING >:(");
+        //Debug.Log("ATTACKING >:(");
 
         if (target == null || Vector3.Distance(transform.position, target.position) > detectionRange)
         {
@@ -108,7 +108,7 @@ public class TowerAI : MonoBehaviour
         if (isDying)
             return;
         
-        Debug.Log("dead... X_X");
+        //Debug.Log("dead... X_X");
 
         if (destroyFXPrefab)
             Instantiate(destroyFXPrefab, transform.position, transform.rotation);
@@ -170,5 +170,14 @@ public class TowerAI : MonoBehaviour
         {
             currentState = TowerState.Die;
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Bullet"))
+        {
+            TakeDamage(50);
+            Debug.Log("TOWER took damage");
+        }   
     }
 }
