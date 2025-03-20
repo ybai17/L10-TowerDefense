@@ -77,7 +77,7 @@ public class TowerAI : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("ATTACKING >:(");
+        //Debug.Log("ATTACKING >:(");
 
         if (target == null || Vector3.Distance(transform.position, target.position) > detectionRange)
         {

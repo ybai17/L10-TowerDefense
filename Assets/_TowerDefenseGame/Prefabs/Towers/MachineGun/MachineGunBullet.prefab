@@ -9586,7 +9586,7 @@ GameObject:
   - component: {fileID: 715277190782381702}
   m_Layer: 10
   m_Name: MachineGunBullet
-  m_TagString: TowerBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

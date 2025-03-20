@@ -172,7 +172,8 @@ public class EnemyAI : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("TowerBullet"))
+        Debug.Log("Hit by " + collision.transform.tag);
+        if (collision.transform.CompareTag("Bullet"))
         {
             BulletBehavior bulletBehavior = collision.gameObject.GetComponent<BulletBehavior>();
             if (bulletBehavior)

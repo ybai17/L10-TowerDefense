@@ -34,7 +34,7 @@ public class BulletBehavior : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
 
         //smooth rotation
-        Quaternion rotationToTarget = Quaternion.LookRotation(target.position);
+        Quaternion rotationToTarget = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation,
                                                 rotationToTarget,
                                                 rotationSpeed * Time.fixedDeltaTime);

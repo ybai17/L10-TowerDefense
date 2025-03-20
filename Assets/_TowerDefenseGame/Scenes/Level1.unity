@@ -4103,6 +4103,10 @@ PrefabInstance:
       propertyPath: targetBase
       value: 
       objectReference: {fileID: 1445256167}
+    - target: {fileID: -7933308056766172294, guid: 1c7aff167267b4cb6b9ad49b6c2b3c93, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4132166219533410251, guid: 106a75ecfeed344439ca1b79e0e14bcd, type: 3}
     - target: {fileID: 3137075783356524703, guid: 1c7aff167267b4cb6b9ad49b6c2b3c93, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22
@@ -4142,6 +4146,10 @@ PrefabInstance:
     - target: {fileID: 3137075783356524703, guid: 1c7aff167267b4cb6b9ad49b6c2b3c93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650160974930206423, guid: 1c7aff167267b4cb6b9ad49b6c2b3c93, type: 3}
+      propertyPath: m_Speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6889207713388379910, guid: 1c7aff167267b4cb6b9ad49b6c2b3c93, type: 3}
       propertyPath: m_Name
