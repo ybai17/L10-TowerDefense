@@ -14557,7 +14557,7 @@ MonoBehaviour:
   rotationSpeed: 100
   lifetime: 5
   damage: 10
-  bulletHitVFXPrefab: {fileID: 534260366808470948, guid: e7865b22134124ac58e486a5f125e7c3, type: 3}
+  bulletHitVFXPrefab: {fileID: 1337568691461264, guid: 014d758100f36644d96e5851947c8ca6, type: 3}
 --- !u!1 &4739401406311911194
 GameObject:
   m_ObjectHideFlags: 0

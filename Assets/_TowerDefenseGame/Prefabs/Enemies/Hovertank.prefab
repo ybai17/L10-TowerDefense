@@ -597,7 +597,7 @@ MonoBehaviour:
   turret: {fileID: 8505370626030064319}
   rotationSpeed: 30
   detectionRange: 10
-  projectilePrefab: {fileID: 4132166219533410251, guid: e1ca50c5fe30d42c68e1b3170735b7bc, type: 3}
+  projectilePrefab: {fileID: 4132166219533410251, guid: 106a75ecfeed344439ca1b79e0e14bcd, type: 3}
   firePoint: {fileID: 3210972321951199739}
   fireRate: 2
   health: 100
@@ -612,7 +612,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
