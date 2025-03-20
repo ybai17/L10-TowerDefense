@@ -44,6 +44,8 @@ public class EnemyAI : MonoBehaviour
         agent.SetDestination(targetBase.position);
         //this also works
         //agent.destination = targetBase.position;
+
+        isDying = false;
     }
 
     // Update is called once per frame
@@ -71,12 +73,42 @@ public class EnemyAI : MonoBehaviour
 
     void Attack()
     {
+        //check if we can attack
+        if (attackTarget == null || Vector3.Distance(transform.position, attackTarget.position) > detectionRange)
+        {
+            attackTarget = null;
+            currentState = EnemyState.Navigate;
+            return;
+        }
 
+        //look at tower
+        Vector3 direction = attackTarget.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+
+        //can we shoot?
+        if (fireCooldown <= 0)
+        {
+            Shoot();
+            fireCooldown = 1f / fireRate;
+        }
+        fireCooldown -= Time.deltaTime;
     }
     
     void Die()
     {
+        if (isDying)
+        {
+            return;
+        }
 
+        if (destroyFXPrefab)
+        {
+            Instantiate(destroyFXPrefab, transform.position, transform.rotation);
+            Destroy(gameObject, 1);
+
+            isDying = true;
+        }
     }
 
     void FindNearestTower()
@@ -100,6 +132,24 @@ public class EnemyAI : MonoBehaviour
             attackTarget = nearestTower;
             Debug.Log("Buggy targeting: " + attackTarget.name);
             currentState = EnemyState.Attack;
+        }
+    }
+
+    void Shoot()
+    {
+        var bullet = Instantiate(projectilePrefab, firePoint.position, transform.rotation);
+
+        BulletBehavior bulletBehavior = bullet.GetComponent<BulletBehavior>();
+        bulletBehavior.SetTarget(attackTarget);
+    }
+
+    void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            currentState = EnemyState.Die;
         }
     }
 }
