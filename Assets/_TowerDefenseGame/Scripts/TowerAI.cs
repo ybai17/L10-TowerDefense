@@ -77,7 +77,7 @@ public class TowerAI : MonoBehaviour
 
     void Attack()
     {
-        //Debug.Log("ATTACKING >:(");
+        Debug.Log("ATTACKING >:(");
 
         if (target == null || Vector3.Distance(transform.position, target.position) > detectionRange)
         {
@@ -174,10 +174,18 @@ public class TowerAI : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Bullet"))
+        if (collision.transform.CompareTag("EnemyBullet"))
         {
-            TakeDamage(50);
-            Debug.Log("TOWER took damage");
+            BulletBehavior bulletBehavior = collision.gameObject.GetComponent<BulletBehavior>();
+            if (bulletBehavior)
+            {
+                int damage = bulletBehavior.GetDamageValue();
+                TakeDamage(damage);
+                Debug.Log("TOWER took " + damage + " damage");
+            } else
+            {
+                Debug.Log("No damage taken from bullet");
+            }
         }   
     }
 }

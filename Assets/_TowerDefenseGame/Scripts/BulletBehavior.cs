@@ -58,4 +58,9 @@ public class BulletBehavior : MonoBehaviour
             Instantiate(bulletHitVFXPrefab, collisionPoint, Quaternion.identity);
         }
     }
+
+    public int GetDamageValue()
+    {
+        return damage;
+    }
 }

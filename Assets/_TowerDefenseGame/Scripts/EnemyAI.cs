@@ -148,7 +148,7 @@ public class EnemyAI : MonoBehaviour
 
     void Shoot()
     {
-        var bullet = Instantiate(projectilePrefab, firePoint.position, turret.rotation);
+        var bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
         BulletBehavior bulletBehavior = bullet.GetComponent<BulletBehavior>();
         bulletBehavior.SetTarget(attackTarget);
@@ -172,10 +172,18 @@ public class EnemyAI : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Bullet"))
+        if (collision.transform.CompareTag("TowerBullet"))
         {
-            TakeDamage(40);
-            Debug.Log("ENEMY took damage");
+            BulletBehavior bulletBehavior = collision.gameObject.GetComponent<BulletBehavior>();
+            if (bulletBehavior)
+            {
+                int damage = bulletBehavior.GetDamageValue();
+                TakeDamage(damage);
+                Debug.Log("ENEMY took " + damage + " damage");
+            } else
+            {
+                Debug.Log("No damage taken from bullet");
+            }
         }   
     }
 }

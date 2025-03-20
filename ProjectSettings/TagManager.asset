@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Bullet
   - Enemy
   - Target
   - Tower
+  - EnemyBullet
+  - TowerBullet
   layers:
   - Default
   - TransparentFX
