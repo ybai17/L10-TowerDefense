@@ -203,7 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4457715277627928}
   m_Layer: 10
-  m_Name: ProjectilePoint
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 571167235653111936, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

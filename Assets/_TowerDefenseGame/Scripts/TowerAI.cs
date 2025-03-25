@@ -153,6 +153,13 @@ public class TowerAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
 
+    void OnDrawGizmos()
+    {
+        //visualie LOS from the towers
+        Vector3 losEndpoint = firePoint.position + firePoint.forward * detectionRange; 
+        Debug.DrawLine(firePoint.position, losEndpoint, Color.green);
+    }
+
     void Shoot()
     {
         var bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
