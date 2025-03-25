@@ -95,7 +95,9 @@ public class TowerAI : MonoBehaviour
         //check cooldown - can we shoot?
         if (fireCooldown <= 0)
         {
-            Shoot();
+            if (HasLineOfSight(target))
+                Shoot();
+            
             fireCooldown = 1f / fireRate;
             Debug.Log("fireCooldown " + fireCooldown);
         }
@@ -177,6 +179,23 @@ public class TowerAI : MonoBehaviour
         {
             currentState = TowerState.Die;
         }
+    }
+
+    bool HasLineOfSight(Transform target)
+    {
+        RaycastHit hit;
+        Vector3 direction = (target.position - firePoint.position).normalized;
+
+        if (Physics.Raycast(firePoint.position, direction, out hit, detectionRange))
+        {
+            if (hit.collider.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Enemy in LOS: " + hit.collider.name);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void OnCollisionEnter(Collision collision)

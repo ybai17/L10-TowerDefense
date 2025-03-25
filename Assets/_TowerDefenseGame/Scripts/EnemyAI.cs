@@ -101,7 +101,9 @@ public class EnemyAI : MonoBehaviour
         //can we shoot?
         if (fireCooldown <= 0)
         {
-            Shoot();
+            if (HasLineOfSight(attackTarget))
+                Shoot();
+                
             fireCooldown = 1f / fireRate;
         }
         fireCooldown -= Time.deltaTime;
@@ -181,6 +183,23 @@ public class EnemyAI : MonoBehaviour
         {
             currentState = EnemyState.Die;
         }
+    }
+
+    bool HasLineOfSight(Transform target)
+    {
+        RaycastHit hit;
+        Vector3 direction = (target.position - firePoint.position).normalized;
+
+        if (Physics.Raycast(firePoint.position, direction, out hit, detectionRange))
+        {
+            if (hit.collider.gameObject.CompareTag("Tower"))
+            {
+                Debug.Log("Tower in LOS: " + hit.collider.name);
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void OnDrawGizmos()
