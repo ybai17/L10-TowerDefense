@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject buildFXPrefab;
     public Transform targetBase;
     public EnemyState currentState = EnemyState.Navigate;
-    public Slider healthSlider;
+    public int baseDamageValue = 10;
 
     NavMeshAgent agent;
 
@@ -35,6 +35,7 @@ public class EnemyAI : MonoBehaviour
     [Header("Die Settings")]
     public int health = 100;
     public GameObject destroyFXPrefab;
+    public Slider healthSlider;
 
     bool isDying;
 
@@ -214,6 +215,11 @@ public class EnemyAI : MonoBehaviour
         }
 
         return false;
+    }
+
+    public int GetBaseDamageValue()
+    {
+        return baseDamageValue;
     }
 
     void OnDrawGizmos()

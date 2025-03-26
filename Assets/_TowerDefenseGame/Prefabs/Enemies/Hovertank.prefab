@@ -595,6 +595,7 @@ MonoBehaviour:
   buildFXPrefab: {fileID: 0}
   targetBase: {fileID: 0}
   currentState: 0
+  baseDamageValue: 20
   turret: {fileID: 8505370626030064319}
   rotationSpeed: 30
   detectionRange: 10
@@ -604,6 +605,7 @@ MonoBehaviour:
   fireRate: 2
   health: 100
   destroyFXPrefab: {fileID: 1082826025734650, guid: 10eef6400678c4c75b2ac94e435a2bd5, type: 3}
+  healthSlider: {fileID: 0}
 --- !u!195 &5650160974930206423
 NavMeshAgent:
   m_ObjectHideFlags: 0
