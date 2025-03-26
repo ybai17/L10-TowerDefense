@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject buildFXPrefab;
     public Transform targetBase;
     public EnemyState currentState = EnemyState.Navigate;
+    public Slider healthSlider;
 
     NavMeshAgent agent;
 
@@ -37,6 +39,7 @@ public class EnemyAI : MonoBehaviour
     bool isDying;
 
     Quaternion originalTurretRotation;
+    int maxHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +54,14 @@ public class EnemyAI : MonoBehaviour
 
         if (turret)
             originalTurretRotation = turret.localRotation;
+
+        maxHealth = health;
+
+        if (healthSlider)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = health;
+        }
     }
 
     // Update is called once per frame
@@ -178,6 +189,9 @@ public class EnemyAI : MonoBehaviour
     void TakeDamage(int damage)
     {
         health -= damage;
+
+        if (healthSlider)
+            healthSlider.value = health;
 
         if (health <= 0)
         {
