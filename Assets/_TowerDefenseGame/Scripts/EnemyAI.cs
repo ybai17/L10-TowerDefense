@@ -47,6 +47,17 @@ public class EnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
+        if (!targetBase)
+        {
+            targetBase = GameObject.FindGameObjectWithTag("Target").transform;
+
+            if (!targetBase)
+            {
+                Debug.Log("No target base found for enemies");
+                return;
+            }
+        }
+
         agent.SetDestination(targetBase.position);
         //this also works
         //agent.destination = targetBase.position;
