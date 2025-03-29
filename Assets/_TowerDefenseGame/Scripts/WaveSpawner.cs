@@ -19,6 +19,13 @@ public class WaveSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //if you want to delete a saved key
+        //PlayerPrefs.DeleteKey("LastWave");
+
+        //second val is the default value if GetInt() returns null
+        currentWaveIndex = PlayerPrefs.GetInt("LastWave", 0);
+        Debug.Log("Retrieved saved wave: " + currentWaveIndex);
+
         //StartCoroutine(SpawnWave(waves[0]));
         StartCoroutine(SpawnMultipleWaves());
     }
@@ -40,6 +47,14 @@ public class WaveSpawner : MonoBehaviour
             //lambda function...reminds me of anonymous functions in javascript
             
             currentWaveIndex++;
+
+            //save player dataL: the last wave they completed/survived
+            PlayerPrefs.SetInt("LastWave", currentWaveIndex);
+            PlayerPrefs.Save();
+            Debug.Log("Saved wave: " + currentWaveIndex);
+
+            //this stuff gets saved in the registry on Windows, can be viewed at:
+            // Computer\HKEY_CURRENT_USER\SOFTWARE\Unity\UnityEditor\DefaultCompany\L10-Tower-Defense
         }
     }
 
