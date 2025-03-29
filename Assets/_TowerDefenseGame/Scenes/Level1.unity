@@ -2708,17 +2708,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemyPrefab:
+  - enemyPrefabs:
     - {fileID: 5579247913167121490, guid: f9557bad97cbf441398c3b90b4dc95cb, type: 3}
     enemyCount: 5
     spawnInterval: 3
-  - enemyPrefab:
+  - enemyPrefabs:
     - {fileID: 5579247913167121490, guid: f9557bad97cbf441398c3b90b4dc95cb, type: 3}
     - {fileID: 6889207713388379910, guid: 1c7aff167267b4cb6b9ad49b6c2b3c93, type: 3}
     - {fileID: 6889207713388379910, guid: 1c7aff167267b4cb6b9ad49b6c2b3c93, type: 3}
     enemyCount: 6
     spawnInterval: 2
-  - enemyPrefab:
+  - enemyPrefabs:
     - {fileID: 1490980424872444174, guid: 8da5aec6bc7d94f74bcaba2ff59d2c3d, type: 3}
     enemyCount: 1
     spawnInterval: 10
