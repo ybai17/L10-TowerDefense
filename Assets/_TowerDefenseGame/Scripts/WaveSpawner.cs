@@ -64,6 +64,8 @@ public class WaveSpawner : MonoBehaviour
         {
             int enemyIndex = Random.Range(0, wave.enemyPrefabs.Length);
             GameObject enemyPrefab = wave.enemyPrefabs[enemyIndex];
+            Debug.Log("Spawn: " + enemyPrefab.name + "(index " + enemyIndex + ")");
+
             SpawnEnemy(enemyPrefab);
             yield return new WaitForSeconds(wave.spawnInterval);
         }
