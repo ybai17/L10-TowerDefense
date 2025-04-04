@@ -870,6 +870,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 19501619781234871, guid: c9c12b5b6b1d34b298c8c6616d992a11, type: 3}
   m_PrefabInstance: {fileID: 350086291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &355177056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 355177057}
+  - component: {fileID: 355177058}
+  m_Layer: 0
+  m_Name: TowerBuilder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &355177057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355177056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -47.098106, y: -84.05657, z: 2.7199848}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355177058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355177056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547b4dd9a12650a428f1b89689738358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers:
+  - {fileID: 1401014823036408, guid: 639c49a7820a549c5822f7b768abc5ac, type: 3}
+  - {fileID: 1361402013487122, guid: afd8cfe3809484aac81a3f4f39b80ca5, type: 3}
+  - {fileID: 1161251386251526, guid: 6f6de38bc4946428ab2a1d468039753e, type: 3}
 --- !u!1001 &386386672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5008,3 +5056,4 @@ SceneRoots:
   - {fileID: 1688447462}
   - {fileID: 1098636020}
   - {fileID: 1542006668}
+  - {fileID: 355177057}
