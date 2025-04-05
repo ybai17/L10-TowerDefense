@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     public Transform targetBase;
     public EnemyState currentState = EnemyState.Navigate;
     public int baseDamageValue = 10;
+    public int rewardMoney = 1;
 
     NavMeshAgent agent;
 
@@ -144,10 +145,13 @@ public class EnemyAI : MonoBehaviour
         if (destroyFXPrefab)
         {
             Instantiate(destroyFXPrefab, transform.position, transform.rotation);
-            Destroy(gameObject, 1);
-
-            isDying = true;
         }
+
+        isDying = true;
+
+        MoneyManager.Instance.GainMoney(rewardMoney);
+
+        Destroy(gameObject, 1);
     }
 
     void FindNearestTower()

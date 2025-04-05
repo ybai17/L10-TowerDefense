@@ -256,6 +256,7 @@ MonoBehaviour:
   targetBase: {fileID: 0}
   currentState: 0
   baseDamageValue: 10
+  rewardMoney: 3
   turret: {fileID: 2006134285274705125}
   rotationSpeed: 30
   detectionRange: 10
