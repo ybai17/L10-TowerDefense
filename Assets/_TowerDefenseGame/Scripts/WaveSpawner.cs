@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class WaveSpawner : MonoBehaviour
     public Wave[] waves;
     public float timeBetweenWaves = 5f;
 
-    public int currentWaveIndex = 0;
+    public TMP_Text waveText;
+    int currentWaveIndex = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,13 +36,14 @@ public class WaveSpawner : MonoBehaviour
     {
         while (currentWaveIndex < waves.Length)
         {
-            Debug.Log("Wave incoming: " + (currentWaveIndex + 1));
+            // Debug.Log("Wave incoming: " + (currentWaveIndex + 1));
+            UpdateWaveText();
             yield return new WaitForSeconds(timeBetweenWaves);
 
-            Debug.Log("Spawning wave " + (currentWaveIndex + 1));
+            // Debug.Log("Spawning wave " + (currentWaveIndex + 1));
             yield return StartCoroutine(SpawnWave(waves[currentWaveIndex]));
 
-            Debug.Log("Waiting for all enemies to die");
+            // Debug.Log("Waiting for all enemies to die");
             //yield return new WaitUntil(AreAllEnemiesDestroyed);
             yield return new WaitUntil(() => GameObject.FindGameObjectsWithTag("Enemy").Length == 0);
 
@@ -79,5 +82,13 @@ public class WaveSpawner : MonoBehaviour
     bool AreAllEnemiesDestroyed()
     {
         return GameObject.FindGameObjectsWithTag("Enemy").Length == 0;
+    }
+
+    void UpdateWaveText()
+    {
+        if (waveText)
+        {
+            waveText.text = (currentWaveIndex + 1).ToString() + " / " + waves.Length.ToString();
+        }
     }
 }

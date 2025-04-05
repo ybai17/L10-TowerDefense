@@ -48,6 +48,11 @@ public class MoneyManager : MonoBehaviour
         return false;
     }
 
+    public int GetCurrentMoney()
+    {
+        return currentMoney;
+    }
+
     public void GainMoney(int amount)
     {
         currentMoney += amount;

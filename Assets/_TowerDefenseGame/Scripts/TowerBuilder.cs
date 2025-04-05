@@ -64,6 +64,11 @@ public class TowerBuilder : MonoBehaviour
         return towers[selectedTowerIndex].towerCost;
     }
 
+    public int GetSelectedTowerCost(int index)
+    {
+	    return towers[index].towerCost;
+    }
+
     public bool HasTowerSelected()
     {
         return selectedTower;
