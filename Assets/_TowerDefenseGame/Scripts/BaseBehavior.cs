@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BaseBehavior : MonoBehaviour
@@ -30,7 +31,10 @@ public class BaseBehavior : MonoBehaviour
 
         if (health <= 0)
         {
+            health = 0;
             Debug.Log("Game Over");
+
+            GameLost();
         }
     }
     
@@ -53,5 +57,13 @@ public class BaseBehavior : MonoBehaviour
             Destroy(other.gameObject);
 
         }
+    }
+
+    void GameLost()
+    {
+        //if we want to keep the singletons for the TowerBuilder and MoneyManager (AKA not call destroy or reset them)
+        //we can write Reset() functions for them that reset their values, and then we can call them here
+        //
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
