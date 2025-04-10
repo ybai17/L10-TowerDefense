@@ -779,6 +779,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3137075783356524703}
     m_Modifications:
+    - target: {fileID: 297707976381477237, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1039935928580393266, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -869,6 +873,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3891090292707156531, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392523467541443617, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

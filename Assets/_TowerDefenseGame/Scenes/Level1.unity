@@ -546,7 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.30588236, g: 0.6392157, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.27058828, b: 0.9742512, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3611,7 +3611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4892,6 +4892,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a0c0b78d3cfda4eb6acd5752a0eda707, type: 3}
+    - target: {fileID: 4118691552507621065, guid: 1f116284524ec5f4b94cbd508a76a068, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7095992929674408241, guid: 1f116284524ec5f4b94cbd508a76a068, type: 3}
       propertyPath: m_Name
       value: ButtonExit
@@ -4918,9 +4922,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Environment
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
       value: Pt1_Enviro
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
@@ -4930,9 +4942,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
       value: Pt2_Enviro
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 100016, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
@@ -4942,9 +4962,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100018, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
       value: Pt3_Enviro
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 100020, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
@@ -4954,9 +4982,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100022, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
       value: Pt4_Enviro
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 100024, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
@@ -4966,13 +5002,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100026, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
       value: Pt5_Enviro
       objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_Name
       value: Pt6_Enviro
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6056,6 +6104,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e3de1acb1ed3a4656bb68c4db2123bab, type: 3}
+    - target: {fileID: 4118691552507621065, guid: 1f116284524ec5f4b94cbd508a76a068, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7095992929674408241, guid: 1f116284524ec5f4b94cbd508a76a068, type: 3}
       propertyPath: m_Name
       value: ButtonMainMenu
@@ -6371,6 +6423,10 @@ PrefabInstance:
     - target: {fileID: 4017015998172213467, guid: 1f116284524ec5f4b94cbd508a76a068, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118691552507621065, guid: 1f116284524ec5f4b94cbd508a76a068, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095992929674408241, guid: 1f116284524ec5f4b94cbd508a76a068, type: 3}
       propertyPath: m_Name
