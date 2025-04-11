@@ -70,6 +70,11 @@ public class EnemyAI : MonoBehaviour
 
         maxHealth = health;
 
+        if (!healthSlider)
+        {
+            healthSlider = transform.GetChild(1).transform.GetChild(0).GetComponent<Slider>();
+        }
+
         if (healthSlider)
         {
             healthSlider.maxValue = maxHealth;
@@ -204,6 +209,8 @@ public class EnemyAI : MonoBehaviour
 
     void TakeDamage(int damage)
     {
+        Debug.Log(gameObject.name + " took " + damage + " damage");
+
         health -= damage;
 
         if (healthSlider)

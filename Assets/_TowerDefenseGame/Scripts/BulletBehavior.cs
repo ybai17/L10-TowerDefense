@@ -19,12 +19,6 @@ public class BulletBehavior : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         if (!target)

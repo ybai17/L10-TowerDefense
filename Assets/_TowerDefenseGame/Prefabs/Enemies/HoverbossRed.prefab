@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1779411071645246216}
   - component: {fileID: 9142301226905731575}
   - component: {fileID: 4352932755308414566}
-  - component: {fileID: 3663899613260004572}
+  - component: {fileID: 3105505142127793630}
   - component: {fileID: 1216507845205788836}
   - component: {fileID: 7457175047767373446}
   m_Layer: 11
@@ -195,8 +195,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!136 &3663899613260004572
-CapsuleCollider:
+--- !u!65 &3105505142127793630
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -213,11 +213,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 3.0378366, y: 1.5308857, z: 3.5726273}
+  m_Center: {x: -0.008429289, y: 0.93640804, z: 0.1778382}
 --- !u!195 &1216507845205788836
 NavMeshAgent:
   m_ObjectHideFlags: 0

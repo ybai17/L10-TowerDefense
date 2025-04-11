@@ -138,7 +138,7 @@ MonoBehaviour:
   turret: {fileID: 4877050138446582}
   rotationSpeed: 30
   maxRotationAngle: 90
-  detectionRange: 5
+  detectionRange: 10
   projectilePrefab: {fileID: 4132166219533410251, guid: e1ca50c5fe30d42c68e1b3170735b7bc, type: 3}
   firePoint: {fileID: 4457715277627928}
   fireRate: 2
@@ -164,8 +164,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.971665, y: 1.4077798, z: 2.0201206}
-  m_Center: {x: 0.04209442, y: 0.7145399, z: 0.21960008}
+  m_Size: {x: 1.971665, y: 1.4077798, z: 1.6875905}
+  m_Center: {x: 0.04209442, y: 0.7145399, z: 0.053334747}
 --- !u!54 &9108205952735068506
 Rigidbody:
   m_ObjectHideFlags: 0

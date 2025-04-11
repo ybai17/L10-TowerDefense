@@ -578,8 +578,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5191112, y: 1.0242176, z: 2.1510298}
-  m_Center: {x: -0.0129412385, y: 0.7463789, z: 0.0072523206}
+  m_Size: {x: 2.2948024, y: 1.0242176, z: 2.432083}
+  m_Center: {x: 0.023087857, y: 0.7463789, z: -0.1332742}
 --- !u!114 &-7933308056766172294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,7 +606,7 @@ MonoBehaviour:
   fireRate: 2
   health: 100
   destroyFXPrefab: {fileID: 1082826025734650, guid: 10eef6400678c4c75b2ac94e435a2bd5, type: 3}
-  healthSlider: {fileID: 0}
+  healthSlider: {fileID: 7541146580067932335}
 --- !u!195 &5650160974930206423
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -889,3 +889,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3891090292707156531, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
   m_PrefabInstance: {fileID: 7819976354117282266}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7541146580067932335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 297707976381477237, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
+  m_PrefabInstance: {fileID: 7819976354117282266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

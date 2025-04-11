@@ -99,7 +99,7 @@ public class TowerAI : MonoBehaviour
                 Shoot();
             
             fireCooldown = 1f / fireRate;
-            Debug.Log("fireCooldown " + fireCooldown);
+            //Debug.Log("fireCooldown " + fireCooldown);
         }
 
         fireCooldown -= Time.deltaTime;
@@ -190,7 +190,7 @@ public class TowerAI : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Enemy in LOS: " + hit.collider.name);
+                //Debug.Log("Enemy in LOS: " + hit.collider.name);
                 return true;
             }
         }

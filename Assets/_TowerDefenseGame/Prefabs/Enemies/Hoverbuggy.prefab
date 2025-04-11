@@ -183,7 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8125825875897929087}
   - component: {fileID: 4691158509113047874}
-  - component: {fileID: 9040692417103015486}
+  - component: {fileID: 2448894015225628051}
   - component: {fileID: 8322516553836014042}
   - component: {fileID: 6988674565513599024}
   m_Layer: 11
@@ -238,8 +238,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!136 &9040692417103015486
-CapsuleCollider:
+--- !u!65 &2448894015225628051
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -256,11 +256,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.55
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.42, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.6807518, z: 1.4888608}
+  m_Center: {x: 0, y: 0.37878036, z: -0.030013919}
 --- !u!195 &8322516553836014042
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -309,7 +307,7 @@ MonoBehaviour:
   fireRate: 2
   health: 100
   destroyFXPrefab: {fileID: 1082826025734650, guid: 10eef6400678c4c75b2ac94e435a2bd5, type: 3}
-  healthSlider: {fileID: 0}
+  healthSlider: {fileID: 2207220555951168170}
 --- !u!1 &6758349472320825865
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +452,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
+--- !u!114 &2207220555951168170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 297707976381477237, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
+  m_PrefabInstance: {fileID: 1909584196035963871}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3422694709069056492 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3891090292707156531, guid: ab06d09a3b8e8e249a8392f8976514d0, type: 3}
